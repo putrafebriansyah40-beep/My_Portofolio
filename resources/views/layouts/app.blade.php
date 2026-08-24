@@ -9,6 +9,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Portfolio | Web Developer' }}</title>
 
+    {{-- Preconnect to Google Fonts for faster load --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     {{-- Favicon --}}
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 
@@ -85,7 +89,7 @@
     </nav>
 
     {{-- Main Content --}}
-    <main>
+    <main class="w-full overflow-x-hidden relative flex-grow">
         @yield('content')
     </main>
 

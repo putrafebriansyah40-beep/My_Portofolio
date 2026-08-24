@@ -31,7 +31,7 @@
             <div class="flex items-center justify-between h-16 md:h-20">
                 {{-- Logo --}}
                 <a href="#hero" class="flex items-center space-x-2 group">
-                    <span class="logo-text font-display font-bold text-xl tracking-tight">My Portofolio</span>
+                    <span class="logo-text font-display font-bold text-xl tracking-tight">febri.tech</span>
                 </a>
 
                 {{-- Desktop Nav --}}
@@ -73,7 +73,7 @@
         </div>
 
         {{-- Mobile Menu --}}
-        <div id="mobile-menu" class="md:hidden fixed inset-0 top-16 mobile-menu-bg backdrop-blur-xl transform translate-x-full transition-transform duration-500 ease-in-out z-40">
+        <div id="mobile-menu" class="md:hidden fixed inset-0 top-16 mobile-menu-bg backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-40">
             <div class="flex flex-col items-center justify-center h-full space-y-8">
                 <a href="#hero" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.home">Home</a>
                 <a href="#about" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.about">About</a>

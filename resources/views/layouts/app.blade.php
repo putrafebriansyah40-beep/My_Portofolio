@@ -16,11 +16,7 @@
     <script>
         (function() {
             const theme = localStorage.getItem('theme') || 'dark';
-            if (theme === 'light') {
-                document.documentElement.classList.remove('dark');
-            } else {
-                document.documentElement.classList.add('dark');
-            }
+            if (theme === 'light') document.documentElement.classList.add('light-mode');
             const lang = localStorage.getItem('lang') || 'en';
             document.documentElement.lang = lang === 'id' ? 'id' : 'en';
         })();
@@ -28,7 +24,7 @@
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased text-gray-800 dark:text-gray-200 min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f172a] transition-colors duration-300 overflow-x-hidden">
+<body class="bg-mesh min-h-screen overflow-x-hidden w-full">
     {{-- Navigation --}}
     <nav id="navbar" class="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[90%] max-w-7xl z-50 transition-all duration-500 rounded-3xl liquid-glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

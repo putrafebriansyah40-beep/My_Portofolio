@@ -71,19 +71,18 @@
                 </div>
             </div>
         </div>
-
-        {{-- Mobile Menu --}}
-        <div id="mobile-menu" class="md:hidden fixed inset-0 top-16 mobile-menu-bg backdrop-blur-xl opacity-0 pointer-events-none translate-x-full transition-all duration-500 ease-in-out z-40">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#hero" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.home">Home</a>
-                <a href="#about" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.about">About</a>
-                <a href="#skills" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.skills">Skills</a>
-                <a href="#projects" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.projects">Projects</a>
-                <a href="#contact" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.contact">Contact</a>
-                {{-- Hire Me button removed --}}
-            </div>
-        </div>
     </nav>
+
+    {{-- Mobile Menu --}}
+    <div id="mobile-menu" class="md:hidden fixed inset-0 top-0 mobile-menu-bg backdrop-blur-xl opacity-0 pointer-events-none translate-x-full transition-all duration-500 ease-in-out z-40 pt-24">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#hero" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.home">Home</a>
+            <a href="#about" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.about">About</a>
+            <a href="#skills" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.skills">Skills</a>
+            <a href="#projects" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.projects">Projects</a>
+            <a href="#contact" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.contact">Contact</a>
+        </div>
+    </div>
 
     {{-- Main Content --}}
     <main>

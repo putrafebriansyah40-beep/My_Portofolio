@@ -24,7 +24,7 @@
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-mesh min-h-screen">
+<body class="antialiased text-gray-800 dark:text-gray-200 min-h-screen flex flex-col bg-slate-50 dark:bg-[#0f172a] transition-colors duration-300 overflow-x-hidden">
     {{-- Navigation --}}
     <nav id="navbar" class="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[90%] max-w-7xl z-50 transition-all duration-500 rounded-3xl liquid-glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +65,7 @@
                         <div class="space-y-1.5" id="hamburger-icon">
                             <span class="block w-6 h-0.5 hamburger-line transition-all duration-300 origin-center"></span>
                             <span class="block w-6 h-0.5 hamburger-line transition-all duration-300"></span>
-                            <span class="block w-4 h-0.5 hamburger-line transition-all duration-300 origin-center"></span>
+                            <span class="block w-6 h-0.5 hamburger-line transition-all duration-300 origin-center"></span>
                         </div>
                     </button>
                 </div>
@@ -73,7 +73,7 @@
         </div>
 
         {{-- Mobile Menu --}}
-        <div id="mobile-menu" class="md:hidden fixed inset-0 top-16 mobile-menu-bg backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-in-out z-40">
+        <div id="mobile-menu" class="md:hidden fixed inset-0 top-16 mobile-menu-bg backdrop-blur-xl opacity-0 pointer-events-none translate-x-full transition-all duration-500 ease-in-out z-40">
             <div class="flex flex-col items-center justify-center h-full space-y-8">
                 <a href="#hero" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.home">Home</a>
                 <a href="#about" class="text-2xl font-display font-semibold mobile-nav-link" data-i18n="nav.about">About</a>

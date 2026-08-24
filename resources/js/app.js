@@ -209,17 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
         isMenuOpen = !isMenuOpen;
         
         if (isMenuOpen) {
-            mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
             hamburgerIcon.children[0].classList.add('rotate-45', 'translate-y-2');
             hamburgerIcon.children[1].classList.add('opacity-0');
             hamburgerIcon.children[2].classList.add('-rotate-45', '-translate-y-2');
-            document.body.style.overflow = 'hidden';
         } else {
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
             hamburgerIcon.children[0].classList.remove('rotate-45', 'translate-y-2');
             hamburgerIcon.children[1].classList.remove('opacity-0');
             hamburgerIcon.children[2].classList.remove('-rotate-45', '-translate-y-2');
-            document.body.style.overflow = '';
         }
     }
 

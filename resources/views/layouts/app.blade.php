@@ -29,6 +29,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-mesh min-h-screen overflow-x-hidden w-full">
+    {{-- Page Preloader --}}
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark-950 flex items-center justify-center transition-opacity duration-500">
+        <div class="relative flex justify-center items-center">
+            <div class="absolute animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-primary-500 border-opacity-50"></div>
+            <div class="absolute animate-spin rounded-full h-24 w-24 border-r-4 border-l-4 border-accent-500 border-opacity-75" style="animation-direction: reverse; animation-duration: 1.5s;"></div>
+        </div>
+    </div>
+
     {{-- Navigation --}}
     <nav id="navbar" class="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[90%] max-w-7xl z-50 transition-all duration-500 rounded-3xl liquid-glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

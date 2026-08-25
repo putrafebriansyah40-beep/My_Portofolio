@@ -113,6 +113,20 @@ const translations = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Page Preloader ---
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Add a slight delay so the animation is visible for a bit longer
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000); // 1000ms delay before fading out
+        }
+    });
+
     // --- Theme Toggling ---
     const themeToggleBtn = document.getElementById('theme-toggle');
     const iconSun = document.getElementById('icon-sun');

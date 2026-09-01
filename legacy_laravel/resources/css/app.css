@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+
+    body {
+        @apply font-sans antialiased;
+        background: #EBE6EF;
+        color: #3A004D;
+        overflow-x: hidden;
+    }
+
+    ::selection {
+        background: rgba(158, 74, 187, 0.25);
+        color: #3A004D;
+    }
+
+    /* ---- Scrollbar ---- */
+    ::-webkit-scrollbar        { width: 5px; }
+    ::-webkit-scrollbar-track  { background: #ede6f5; }
+    ::-webkit-scrollbar-thumb  { background: #9E4ABB; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3A004D; }
+
+    h1, h2, h3, h4, h5 {
+        @apply font-display font-bold;
+        color: #3A004D;
+    }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+@layer components {
+
+    /* --- Navbar (floating pill, dark glass) --- */
+    .navbar-pill {
+        background: rgba(2, 2, 15, 0.45);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+    }
+    @media (min-width: 640px) {
+        .navbar-pill { border-radius: 9999px; }
+    }
+
+    /* --- Navbar wrapper (fixed top) --- */
+    .navbar-wrapper {
+        background: transparent;
+        transition: all 0.4s ease;
+    }
+
+    /* --- Nav link (white on dark navbar) --- */
+    .nav-link {
+        @apply relative flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium transition-colors duration-200;
+        color: rgba(255,255,255,0.80);
+    }
+    .nav-link:hover { color: rgba(255,255,255,1); }
+    .nav-link.active { color: rgba(255,255,255,1); font-weight: 600; }
+
+    /* --- Glass Card --- */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.60);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.80);
+        box-shadow: 0 8px 32px rgba(58, 0, 77, 0.10), inset 0 1px 1px rgba(255,255,255,0.6);
+    }
+    .glass-card:hover {
+        background: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 16px 48px rgba(58, 0, 77, 0.16), inset 0 1px 1px rgba(255,255,255,0.7);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+    }
+
+    /* --- Floating Card (hero context badges) --- */
+    .floating-card {
+        background: rgba(255, 255, 255, 0.60);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.80);
+        box-shadow: 0 15px 30px rgba(100, 116, 139, 0.12);
+        border-radius: 1rem;
+        padding: 0.875rem;
+        white-space: nowrap;
+    }
+    .floating-card:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    /* --- Floating small pill --- */
+    .floating-pill {
+        background: rgba(255, 255, 255, 0.70);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.90);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border-radius: 9999px;
+        padding: 0.375rem 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: #1e293b;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* --- Button Primary --- */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white;
+        background: #3A004D;
+        box-shadow: 0 4px 20px rgba(58, 0, 77, 0.35);
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        background: #8B4F67;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(58, 0, 77, 0.45);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* --- Button Outline --- */
+    .btn-outline {
+        @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold;
+        border: 2px solid #3A004D;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        color: #3A004D;
+        transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+        background: rgba(58, 0, 77, 0.08);
+        transform: translateY(-2px);
+    }
+
+    /* --- Section header --- */
+    .section-label {
+        @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase;
+        color: #8B4F67;
+        letter-spacing: 0.12em;
+    }
+    .section-title {
+        @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight;
+        color: #3A004D;
+    }
+    .section-subtitle {
+        @apply text-base md:text-lg leading-relaxed max-w-2xl;
+        color: #64748b;
+    }
+
+    /* --- Gradient text --- */
+    .gradient-text {
+        @apply bg-clip-text text-transparent;
+        background-image: linear-gradient(135deg, #3A004D 0%, #9E4ABB 50%, #8B4F67 100%);
+    }
+
+    /* --- Pill / Tag --- */
+    .tag-pill {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+        background: rgba(58, 0, 77, 0.08);
+        color: #3A004D;
+        border: 1px solid rgba(58, 0, 77, 0.20);
+    }
+
+    /* --- Reveal Animation --- */
+    .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .reveal-left {
+        opacity: 0;
+        transform: translateX(-32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.active { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+        opacity: 0;
+        transform: translateX(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+    /* --- Marquee track --- */
+    .marquee-wrapper {
+        overflow: hidden;
+        position: relative;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .marquee-track {
+        display: flex;
+        gap: 0;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+    }
+    .marquee-track-reverse {
+        display: flex;
+        gap: 0;
+        width: max-content;
+        animation: marqueeReverse 35s linear infinite;
+    }
+
+    /* --- Stat card (count-up) --- */
+    .stat-card {
+        @apply glass-card rounded-2xl p-6 text-center flex flex-col items-center gap-1;
+    }
+    .stat-number {
+        @apply text-3xl md:text-4xl font-display font-bold gradient-text;
+    }
+    .stat-label {
+        @apply text-xs font-medium tracking-wide uppercase;
+        color: #64748b;
+    }
+
+    /* --- Project card --- */
+    .project-card {
+        @apply glass-card rounded-3xl overflow-hidden transition-all duration-500 cursor-pointer;
+    }
+    .project-card:hover {
+        box-shadow: 0 20px 60px rgba(58, 0, 77, 0.18);
+        transform: translateY(-4px);
+    }
+
+    /* --- Filter pill button --- */
+    .filter-btn {
+        @apply px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300;
+        background: rgba(255,255,255,0.6);
+        border: 1.5px solid rgba(58,0,77,0.20);
+        color: #64748b;
+    }
+    .filter-btn:hover {
+        border-color: #9E4ABB;
+        color: #3A004D;
+        background: rgba(235,230,239,0.8);
+    }
+    .filter-btn.active {
+        background: #3A004D;
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 4px 14px rgba(58,0,77,0.35);
+    }
+
+    /* --- Experience card --- */
+    .exp-card {
+        @apply glass-card rounded-2xl p-6 transition-all duration-300;
+    }
+    .exp-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 48px rgba(58,0,77,0.14);
+    }
+
+    /* --- Contact card --- */
+    .contact-card {
+        @apply glass-card rounded-3xl p-8 flex flex-col gap-4 transition-all duration-500;
+    }
+    .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 60px rgba(58,0,77,0.16);
+    }
+
+    /* --- Skill icon item --- */
+    .skill-icon-item {
+        @apply flex flex-col items-center gap-2 p-3 rounded-xl transition-all duration-300;
+    }
+    .skill-icon-item img,
+    .skill-icon-item svg {
+        filter: grayscale(80%);
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .skill-icon-item:hover img,
+    .skill-icon-item:hover svg {
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+    .skill-icon-item:hover {
+        background: rgba(58,0,77,0.06);
+    }
+
+    /* --- Available badge --- */
+    .badge-available {
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #059669;
+    }
+
+    /* --- Lanyard string --- */
+    .lanyard-string {
+        width: 2px;
+        background: linear-gradient(to bottom, rgba(58,0,77,0.5), rgba(58,0,77,0.1));
+        margin: 0 auto;
+    }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+    .text-balance { text-wrap: balance; }
+
+    /* Hero background */
+    .bg-hero {
+        background: #EBE6EF;
+    }
+
+    /* Hero intro background */
+    .bg-hero-intro {
+        background: #f6f2fb;
+    }
+
+    /* Dotted background grid */
+    .bg-dot-pattern {
+        background-image: radial-gradient(rgba(58, 0, 77, 0.12) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+
+    /* Glow effect */
+    .text-glow {
+        text-shadow: 0 0 40px rgba(158, 74, 187, 0.4);
+    }
+
+    /* 3D text effect */
+    .text-3d {
+        text-shadow:
+            2px 2px 0 rgba(58, 0, 77, 0.3),
+            4px 4px 0 rgba(58, 0, 77, 0.2),
+            6px 6px 0 rgba(58, 0, 77, 0.1),
+            8px 8px 16px rgba(58, 0, 77, 0.15);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-float, .animate-float-slow, .animate-float-fast,
+        .animate-swing, .marquee-track, .marquee-track-reverse {
+            animation: none !important;
+        }
+        .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Mobile: no floating card overlap */
+    @media (max-width: 767px) {
+        .floating-card { display: none !important; }
+        .floating-pill { display: none !important; }
+    }
+}

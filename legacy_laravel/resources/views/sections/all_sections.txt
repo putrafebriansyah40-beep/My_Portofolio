@@ -1,0 +1,1042 @@
+﻿<section id="about" class="py-24 lg:py-32 relative overflow-hidden bg-[#EBE6EF]">
+    {{-- BG decoration --}}
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-mauve-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 pointer-events-none opacity-[0.07] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {{-- Section Header --}}
+        <div class="text-center mb-16 reveal">
+            <span class="section-label mb-3">
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+                Kenali Saya
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+            </span>
+            <h2 class="section-title mt-2">Tentang <span class="gradient-text">Saya</span></h2>
+            <p class="section-subtitle mx-auto mt-3">Perkenalan singkat tentang siapa saya dan apa yang saya lakukan</p>
+        </div>
+
+        {{-- Narrative Blocks --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            @php
+            $blocks = [
+                ['icon'=>'👋','label'=>'Who I am','text'=> $about_description ?? 'Mahasiswa semester 5 Politeknik Negeri Padang Jurusan Teknologi Informasi Program Studi D4 Teknologi Rekayasa Perangkat Lunak yang aktif mengembangkan kemampuan di bidang web dan mobile.'],
+                ['icon'=>'⚡','label'=>'What motivates me','text'=>'Semangat saya berasal dari proses membangun solusi nyata — dari nol hingga produk yang bisa dipakai orang banyak. Tantangan teknis adalah bahan bakar saya untuk terus berkembang.'],
+                ['icon'=>'🛠️','label'=>'What I enjoy building','text'=> $about_description_2 ?? 'Saya senang membangun aplikasi web full-stack menggunakan Laravel & React, serta desain UI/UX yang bersih dan intuitif menggunakan Figma dan Tailwind CSS.'],
+                ['icon'=>'🚀','label'=>"Where I'm heading",'text'=>'Saya ingin menjadi developer handal yang tidak hanya menulis kode, tetapi juga memahami bisnis dan memberikan dampak nyata melalui teknologi. Terbuka untuk internship & kolaborasi.'],
+            ];
+            @endphp
+            @foreach($blocks as $i => $block)
+            <div class="glass-card rounded-2xl p-6 reveal" style="transition-delay: {{ $i * 120 }}ms;">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-primary-100/60 flex items-center justify-center flex-shrink-0 text-xl border border-primary-200/40">{{ $block['icon'] }}</div>
+                    <div>
+                        <p class="text-xs font-bold text-mauve-500 uppercase tracking-widest mb-1">{{ $block['label'] }}</p>
+                        <p class="text-sm text-primary-800/80 leading-relaxed">{{ $block['text'] }}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        {{-- Stat Cards (Count-up) --}}
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            @php
+            $stats = [
+                ['value'=>'3.27','label'=>'IPK / GPA','suffix'=>'','icon'=>'🎓'],
+                ['value'=>'5+',  'label'=>'Projects','suffix'=>'','icon'=>'💻'],
+                ['value'=>'3',   'label'=>'Org. Roles','suffix'=>'','icon'=>'🏛️'],
+                ['value'=>'3+',  'label'=>'Tahun Coding','suffix'=>'','icon'=>'⚡'],
+            ];
+            @endphp
+            @foreach($stats as $i => $stat)
+            <div class="stat-card reveal" style="transition-delay: {{ $i * 100 }}ms;">
+                <div class="text-2xl mb-1">{{ $stat['icon'] }}</div>
+                <div class="stat-number" data-target="{{ $stat['value'] }}">{{ $stat['value'] }}</div>
+                <div class="stat-label">{{ $stat['label'] }}</div>
+            </div>
+            @endforeach
+        </div>
+
+        {{-- Location & availability --}}
+        <div class="flex flex-wrap items-center justify-center gap-4 reveal">
+            <div class="flex items-center gap-2 text-sm text-primary-700/70">
+                <svg class="w-4 h-4 text-mauve-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                {{ $location ?? 'Padang, Sumatera Barat, Indonesia' }}
+            </div>
+            <div class="badge-available flex items-center gap-2 px-4 py-2 rounded-full">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-semibold text-emerald-700">Open to Internships & Collaboration</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="py-24 lg:py-32 relative overflow-hidden bg-[#f6f2fb]">
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 pointer-events-none opacity-[0.10] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+    {{-- Orbs --}}
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/4 -right-24 w-64 h-64 bg-primary-300/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 -left-24 w-80 h-80 bg-mauve-300/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {{-- Header --}}
+        <div class="text-center mb-16 reveal">
+            <span class="section-label mb-3">
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+                Get in Touch
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+            </span>
+            <h2 class="section-title mt-2">Contact <span class="gradient-text">Me</span></h2>
+            <p class="section-subtitle mx-auto mt-3">Punya proyek atau peluang? Mari terhubung!</p>
+        </div>
+
+        {{-- 3 Contact Platform Cards --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+
+            {{-- LinkedIn --}}
+            <div class="contact-card reveal" style="transition-delay:0ms;">
+                <div class="w-12 h-12 rounded-2xl bg-[#0077B5]/10 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-primary-400/80 uppercase tracking-widest mb-0.5">LinkedIn</p>
+                    <p class="font-bold text-primary-900 text-sm">Febriansyah Putra</p>
+                    <p class="text-xs text-primary-700/60 mt-1">Terhubung untuk peluang profesional, networking, dan referensi kerja.</p>
+                </div>
+                <a href="https://www.linkedin.com/in/febriansyah-putra-59281a340/" target="_blank" class="btn-primary w-full justify-center mt-auto text-sm py-2.5">
+                    Connect
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+            {{-- Instagram --}}
+            <div class="contact-card reveal" style="transition-delay:120ms;">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-primary-400/80 uppercase tracking-widest mb-0.5">Instagram</p>
+                    <p class="font-bold text-primary-900 text-sm">{{ $instagram ?? '@fbriansyh_ptra' }}</p>
+                    <p class="text-xs text-primary-700/60 mt-1">Follow untuk update portofolio, project, dan behind-the-scenes kreativitas saya.</p>
+                </div>
+                <a href="https://www.instagram.com/fbriansyh_ptra/" target="_blank" class="btn-outline w-full justify-center mt-auto text-sm py-2.5">
+                    Follow
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+            {{-- Email --}}
+            <div class="contact-card reveal" style="transition-delay:240ms;">
+                <div class="w-12 h-12 rounded-2xl bg-primary-100/60 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-primary-400/80 uppercase tracking-widest mb-0.5">Email</p>
+                    <p class="font-bold text-primary-900 text-sm truncate">{{ $email ?? 'putrafebriansyah40@gmail.com' }}</p>
+                    <p class="text-xs text-primary-700/60 mt-1">Untuk diskusi proyek, kolaborasi, atau pertanyaan profesional.</p>
+                </div>
+                <a href="mailto:{{ $email ?? 'putrafebriansyah40@gmail.com' }}" class="btn-primary w-full justify-center mt-auto text-sm py-2.5">
+                    Send Email
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        {{-- Big CTA closing --}}
+        <div class="text-center reveal">
+            <div class="glass-card rounded-4xl p-10 md:p-16 max-w-4xl mx-auto">
+                <p class="text-xs font-bold text-mauve-500 uppercase tracking-widest mb-4">Let's Collaborate</p>
+                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-black text-primary-900 leading-tight mb-6">
+                    Let's Build Something<br><span class="gradient-text">Meaningful Together</span>
+                </h3>
+                <p class="text-primary-700/70 mb-8 max-w-md mx-auto">Selalu terbuka untuk proyek baru, peluang magang, atau sekadar ngobrol tentang teknologi.</p>
+                <a href="mailto:{{ $email ?? 'putrafebriansyah40@gmail.com' }}" class="btn-primary text-base px-8 py-4 inline-flex">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    {{ $email ?? 'putrafebriansyah40@gmail.com' }}
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="experience" class="relative overflow-hidden bg-[#EBE6EF] flex flex-col" style="min-height:100vh;">
+
+    {{-- ===== Animated Floating Dots ===== --}}
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {{-- Large accent dots --}}
+        <div class="absolute top-[8%]   left-[15%]  w-3 h-3 rounded-full bg-purple-500/50  animate-float"></div>
+        <div class="absolute top-[22%]  right-[12%] w-4 h-4 rounded-full bg-indigo-500/35  animate-float-slow"></div>
+        <div class="absolute top-[55%]  left-[6%]   w-3.5 h-3.5 rounded-full bg-pink-400/40 animate-float-fast"></div>
+        <div class="absolute top-[75%]  right-[8%]  w-3 h-3 rounded-full bg-blue-500/40    animate-float"></div>
+        <div class="absolute top-[42%]  left-[42%]  w-2.5 h-2.5 rounded-full bg-purple-400/30 animate-float-slow"></div>
+        {{-- Medium dots --}}
+        <div class="absolute top-[35%]  left-[3%]   w-2 h-2 rounded-full bg-violet-400/45  animate-float-fast"></div>
+        <div class="absolute top-[18%]  right-[30%] w-2 h-2 rounded-full bg-pink-500/35    animate-float"></div>
+        <div class="absolute top-[88%]  left-[28%]  w-2.5 h-2.5 rounded-full bg-indigo-400/40 animate-float-slow"></div>
+        <div class="absolute top-[62%]  right-[25%] w-2 h-2 rounded-full bg-purple-500/30  animate-float"></div>
+        <div class="absolute top-[45%]  right-[42%] w-1.5 h-1.5 rounded-full bg-blue-400/40 animate-float-fast"></div>
+        {{-- Small dots --}}
+        <div class="absolute top-[12%]  left-[50%]  w-1.5 h-1.5 rounded-full bg-violet-500/25 animate-float"></div>
+        <div class="absolute top-[30%]  right-[6%]  w-1.5 h-1.5 rounded-full bg-pink-400/30  animate-float-slow"></div>
+        <div class="absolute top-[68%]  left-[35%]  w-1.5 h-1.5 rounded-full bg-indigo-500/25 animate-float-fast"></div>
+        <div class="absolute top-[82%]  right-[38%] w-2 h-2 rounded-full bg-purple-400/35  animate-float"></div>
+        <div class="absolute top-[92%]  left-[10%]  w-1.5 h-1.5 rounded-full bg-blue-500/30 animate-float-slow"></div>
+    </div>
+
+    {{-- ===== Section Header ===== --}}
+    <div class="text-center relative z-10 pt-20 pb-8 reveal">
+        <div class="inline-flex items-center px-7 py-2.5 bg-white/70 backdrop-blur-xl rounded-full border border-[#3A004D]/8 shadow-[0_8px_32px_rgba(58,0,77,0.06)] mb-6">
+            <span class="text-[10px] font-mono uppercase tracking-[0.22em] text-[#8B4F67] font-bold">Featured Highlights</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#3A004D] leading-tight font-display">
+            Milestones & <span class="gradient-text">Achievements</span>
+        </h2>
+    </div>
+
+    {{-- ===== 3D Card Carousel ===== --}}
+    @php
+    $timeline = $timeline ?? [];
+
+    $icons     = ['🏛️', '📡', '🌐', '🎓', '📚'];
+    $gradients = [
+        'from-violet-500 via-purple-500 to-indigo-600',
+        'from-sky-400 via-blue-500 to-indigo-600',
+        'from-rose-400 via-pink-500 to-fuchsia-600',
+        'from-emerald-400 via-teal-500 to-cyan-600',
+        'from-amber-400 via-orange-500 to-red-500',
+    ];
+    $tagColors = ['bg-violet-500', 'bg-blue-500', 'bg-pink-500', 'bg-emerald-500', 'bg-amber-500'];
+
+    $activities = [];
+    foreach ($timeline as $i => $item) {
+        $activities[] = [
+            'title'       => $item['title'],
+            'org'         => $item['org'],
+            'period'      => $item['period'],
+            'description' => $item['description'],
+            'type'        => $item['type'],
+            'icon'        => $icons[$i % count($icons)],
+            'gradient'    => $gradients[$i % count($gradients)],
+            'tag_color'   => $tagColors[$i % count($tagColors)],
+            'number'      => str_pad($i + 1, 2, '0', STR_PAD_LEFT),
+        ];
+    }
+    if (empty($activities)) {
+        $activities = [
+            ['title'=>'Sekretaris Umum','org'=>'Forum Studi Islam Politeknik','period'=>'2025 - 2026','description'=>'Menjadi tangan kanan Ketua Umum dan mengelola administrasi, surat menyurat organisasi.','type'=>'work','icon'=>'🏛️','gradient'=>'from-violet-500 via-purple-500 to-indigo-600','tag_color'=>'bg-violet-500','number'=>'01'],
+            ['title'=>'Anggota Multimedia Support','org'=>'Lembaga Responsi Agama Islam','period'=>'2025 - 2026','description'=>'Menyajikan berbagai informasi melalui media sosial untuk mahasiswa Politeknik Negeri Padang.','type'=>'work','icon'=>'📡','gradient'=>'from-sky-400 via-blue-500 to-indigo-600','tag_color'=>'bg-blue-500','number'=>'02'],
+            ['title'=>'Anggota Public Relationship','org'=>'CyberTech','period'=>'2026 - Sekarang','description'=>'Menjadi jembatan komunikasi antara organisasi dengan publik internal maupun eksternal.','type'=>'work','icon'=>'🌐','gradient'=>'from-rose-400 via-pink-500 to-fuchsia-600','tag_color'=>'bg-pink-500','number'=>'03'],
+            ['title'=>'D4 Teknologi Rekayasa Perangkat Lunak','org'=>'Politeknik Negeri Padang','period'=>'2024 - Sekarang','description'=>'GPA 3.27. Aktif mengembangkan kemampuan di bidang rekayasa perangkat lunak web & mobile.','type'=>'education','icon'=>'🎓','gradient'=>'from-emerald-400 via-teal-500 to-cyan-600','tag_color'=>'bg-emerald-500','number'=>'04'],
+            ['title'=>'SMA MIPA','org'=>'SMA Negeri 1 Sungai Limau','period'=>'2021 - 2024','description'=>'Lulus dengan fokus pada Ilmu Pengetahuan Alam.','type'=>'education','icon'=>'📚','gradient'=>'from-amber-400 via-orange-500 to-red-500','tag_color'=>'bg-amber-500','number'=>'05'],
+        ];
+    }
+    @endphp
+
+    <div class="relative z-10 flex-1 flex flex-col items-center justify-center px-4"
+         x-data="{
+            active: 0,
+            total: {{ count($activities) }},
+            autoTour: false,
+            autoTimer: null,
+            prev() { this.active = (this.active - 1 + this.total) % this.total; },
+            next() { this.active = (this.active + 1) % this.total; },
+            goTo(i) { this.active = i; },
+            startAuto() {
+                this.autoTour = true;
+                this.autoTimer = setInterval(() => { this.next(); }, 3500);
+            },
+            stopAuto() {
+                this.autoTour = false;
+                if (this.autoTimer) clearInterval(this.autoTimer);
+            },
+            toggleAuto() { this.autoTour ? this.stopAuto() : this.startAuto(); },
+         }"
+         @keydown.left.window="prev()"
+         @keydown.right.window="next()">
+
+        {{-- ===== Card Stage ===== --}}
+        <div class="relative w-full max-w-6xl mx-auto flex items-center justify-center"
+             style="height: 460px; perspective: 1200px;">
+
+            @foreach($activities as $i => $act)
+            <div
+                class="absolute transition-all ease-[cubic-bezier(0.34,1.56,0.64,1)] cursor-pointer select-none"
+                style="transition-duration: 700ms;"
+                :style="(function(){
+                    const idx = {{ $i }};
+                    const offset = (idx - active + {{ count($activities) }}) % {{ count($activities) }};
+                    if (offset === 0) {
+                        return 'transform: translateX(-60px) translateZ(0) rotateY(0deg) scale(1); z-index: 30; opacity: 1; filter: none;';
+                    } else if (offset === 1) {
+                        return 'transform: translateX(220px) translateZ(-80px) rotateY(-8deg) scale(0.78); z-index: 20; opacity: 0.9; filter: brightness(0.95);';
+                    } else if (offset === 2) {
+                        return 'transform: translateX(380px) translateZ(-160px) rotateY(-12deg) scale(0.60); z-index: 10; opacity: 0.55; filter: brightness(0.90) blur(1px);';
+                    } else {
+                        return 'transform: translateX(0) translateZ(-200px) scale(0.4); z-index: 1; opacity: 0; pointer-events: none;';
+                    }
+                }())"
+                @click="goTo({{ $i }})"
+            >
+                {{-- Card Container --}}
+                <div class="rounded-[28px] overflow-hidden shadow-[0_25px_80px_rgba(58,0,77,0.20)] border border-white/60 bg-white"
+                     :class="{{ $i }} === active ? 'ring-2 ring-white/50' : ''"
+                     style="width: 360px;">
+
+                    {{-- Gradient Image Header --}}
+                    <div class="relative h-52 bg-gradient-to-br {{ $act['gradient'] }} overflow-hidden">
+                        {{-- Subtle pattern overlay --}}
+                        <div class="absolute inset-0 opacity-[0.08]"
+                             style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+                        {{-- Decorative shapes --}}
+                        <div class="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full"></div>
+                        <div class="absolute top-1/2 -left-6 w-20 h-20 bg-white/8 rounded-full"></div>
+                        <div class="absolute -bottom-4 right-1/3 w-16 h-16 bg-white/10 rounded-full"></div>
+
+                        {{-- Big Icon --}}
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-7xl drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)] select-none"
+                                  :class="{{ $i }} === active ? '' : 'text-5xl'">{{ $act['icon'] }}</span>
+                        </div>
+
+                        {{-- Type Badge --}}
+                        <div class="absolute top-4 left-4">
+                            <div class="px-3 py-1 bg-black/20 backdrop-blur-md rounded-full border border-white/20">
+                                <span class="text-[9px] font-bold text-white uppercase tracking-[0.15em]">
+                                    {{ $act['type'] === 'education' ? '🎓 Education' : '🏢 Organization' }}
+                                </span>
+                            </div>
+                        </div>
+
+                        {{-- Number Badge --}}
+                        <div class="absolute top-4 right-4">
+                            <div class="w-9 h-9 rounded-xl {{ $act['tag_color'] }} flex items-center justify-center shadow-lg border border-white/20 backdrop-blur-sm">
+                                <span class="text-[11px] font-black text-white font-mono">#{{ $act['number'] }}</span>
+                            </div>
+                        </div>
+
+                        {{-- Period Badge (bottom) --}}
+                        <div class="absolute bottom-3 left-4">
+                            <div class="px-3.5 py-1.5 bg-white/20 backdrop-blur-lg rounded-xl border border-white/30">
+                                <span class="text-[10px] font-mono font-bold text-white tracking-wider">{{ $act['period'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Card Body (hidden on non-active with CSS clip) --}}
+                    <div class="p-6"
+                         :style="{{ $i }} === active ? 'max-height: 200px; opacity: 1;' : 'max-height: 0; padding: 0; opacity: 0; overflow: hidden;'"
+                         style="transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.4s ease;">
+                        <h3 class="text-base font-black text-[#3A004D] leading-snug mb-1.5">{{ $act['title'] }}</h3>
+                        <p class="text-[11px] font-bold text-[#8B4F67] uppercase tracking-[0.12em] mb-3">{{ $act['org'] }}</p>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">{{ $act['description'] }}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        {{-- ===== Dot Indicators ===== --}}
+        <div class="flex items-center gap-2.5 mt-4 mb-5">
+            @foreach($activities as $i => $act)
+            <button
+                @click="goTo({{ $i }}); stopAuto()"
+                :class="active === {{ $i }}
+                    ? 'w-8 h-2.5 bg-gradient-to-r from-[#3A004D] to-[#9E4ABB] shadow-[0_2px_8px_rgba(58,0,77,0.3)]'
+                    : 'w-2.5 h-2.5 bg-[#3A004D]/20 hover:bg-[#3A004D]/40'"
+                class="rounded-full transition-all duration-400 ease-out"
+            ></button>
+            @endforeach
+        </div>
+
+        {{-- ===== Bottom Navigation Bar ===== --}}
+        <div class="flex items-center gap-3 pb-16">
+
+            {{-- Prev Button --}}
+            <button @click="prev(); stopAuto()"
+                    class="group w-11 h-11 rounded-full bg-white/80 backdrop-blur-xl border border-[#3A004D]/10
+                           shadow-[0_4px_20px_rgba(58,0,77,0.08)] flex items-center justify-center
+                           hover:bg-white hover:shadow-[0_8px_32px_rgba(58,0,77,0.12)] hover:scale-110
+                           active:scale-95 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#3A004D] group-hover:-translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+
+            {{-- Current Title Pill --}}
+            <div class="px-7 py-3 bg-white/80 backdrop-blur-xl rounded-full border border-[#3A004D]/8 shadow-[0_4px_20px_rgba(58,0,77,0.06)] min-w-[220px] text-center relative overflow-hidden">
+                @foreach($activities as $i => $act)
+                <span x-show="active === {{ $i }}"
+                      x-transition:enter="transition ease-out duration-300"
+                      x-transition:enter-start="opacity-0 translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-200"
+                      x-transition:leave-start="opacity-100"
+                      x-transition:leave-end="opacity-0 -translate-y-2"
+                      class="text-[13px] font-bold text-[#3A004D] tracking-wide block">
+                    {{ $act['title'] }}
+                </span>
+                @endforeach
+            </div>
+
+            {{-- Auto Tour Button --}}
+            <button @click="toggleAuto()"
+                    :class="autoTour
+                        ? 'bg-white border-[#3A004D]/20 text-[#3A004D] shadow-[0_4px_20px_rgba(58,0,77,0.08)]'
+                        : 'bg-[#3A004D] border-transparent text-white shadow-[0_4px_20px_rgba(58,0,77,0.30)]'"
+                    class="flex items-center gap-2.5 px-6 py-3 rounded-full border text-[11px] font-bold tracking-[0.15em] uppercase
+                           hover:scale-105 active:scale-95 transition-all duration-200 backdrop-blur-xl">
+                <template x-if="!autoTour">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </template>
+                <template x-if="autoTour">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </template>
+                <span x-text="autoTour ? 'Pause' : 'Auto Tour'"></span>
+            </button>
+
+            {{-- Next Button --}}
+            <button @click="next(); stopAuto()"
+                    class="group w-11 h-11 rounded-full bg-white/80 backdrop-blur-xl border border-[#3A004D]/10
+                           shadow-[0_4px_20px_rgba(58,0,77,0.08)] flex items-center justify-center
+                           hover:bg-white hover:shadow-[0_8px_32px_rgba(58,0,77,0.12)] hover:scale-110
+                           active:scale-95 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#3A004D] group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{{-- ==================== INTRO SPLASH SECTION ==================== --}}
+<section class="relative h-screen w-full overflow-hidden flex flex-col justify-between items-center font-sans select-none z-[100] pb-8 bg-[#f6f2fb]">
+
+    {{-- Background blur overlay + gradient orbs --}}
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-white/35 backdrop-blur-[3px]"></div>
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-300/30 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-pink-300/25 rounded-full blur-[120px] pointer-events-none"></div>
+        {{-- Dot grid --}}
+        <div class="absolute inset-0 pointer-events-none opacity-[0.18] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+    </div>
+
+    {{-- Glowing accent dots --}}
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/3 left-12 w-2.5 h-2.5 rounded-full bg-purple-600 shadow-[0_0_15px_#9333ea]"></div>
+        <div class="absolute top-1/4 right-1/4 w-3.5 h-3.5 rounded-full bg-indigo-500 shadow-[0_0_18px_#6366f1]"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-3 h-3 rounded-full bg-pink-500 shadow-[0_0_16px_#ec4899]"></div>
+        <div class="absolute bottom-1/4 right-16 w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_12px_#10b981]"></div>
+    </div>
+
+    {{-- Floating Context Cards (desktop) --}}
+    {{-- Top Right: Data Visualization --}}
+    <div class="floating-card absolute top-[22%] right-[5%] lg:right-[8%] z-20 animate-float hidden md:flex items-center gap-3">
+        <div class="p-2.5 bg-gradient-to-tr from-primary-600 to-indigo-600 rounded-xl text-white shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v16a2 2 0 0 0 2 2h16M18 17V9M13 17V5M8 17v-3"/></svg>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-primary-900 font-bold flex items-center gap-1">Web Dev
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7h6v6m-22 4 8.5-8.5 5 5L22 7"/></svg>
+            </span>
+            <span class="text-xs font-extrabold text-slate-800 tracking-wide">Full Stack Developer</span>
+        </div>
+    </div>
+
+    {{-- Top Right pill: Model Acc --}}
+    <div class="floating-pill absolute right-[8%] lg:right-[14%] top-[33%] z-20 hidden lg:flex animate-float-slow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-emerald-600 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+        <span>GPA: <span class="text-emerald-600 font-extrabold">3.27</span></span>
+    </div>
+
+    {{-- Bottom Left: AI & ML --}}
+    <div class="floating-card absolute left-[5%] lg:left-[8%] bottom-[28%] z-20 animate-float-slow hidden md:flex items-center gap-3">
+        <div class="p-2.5 bg-gradient-to-tr from-pink-500 to-primary-600 rounded-xl text-white shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5M3.477 10.896a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4M12 18h6a2 2 0 0 1 2 2v1M12 8h8M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg>
+        </div>
+        <div class="flex flex-col">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-pink-900 font-bold">Laravel Dev</span>
+            <span class="text-xs font-extrabold text-slate-800 tracking-wide">Full Stack & Mobile</span>
+        </div>
+    </div>
+
+    {{-- Bottom Left pill: Framework --}}
+    <div class="floating-pill absolute left-[8%] lg:left-[14%] bottom-[44%] z-20 hidden lg:flex animate-float">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+        <span>Laravel & React.js</span>
+    </div>
+
+    {{-- Left middle: SQL & Big Data --}}
+    <div class="floating-card absolute left-[3%] lg:left-[5%] top-1/2 -translate-y-12 z-20 hidden lg:flex items-center gap-3">
+        <div class="p-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-lg text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5M3 12A9 3 0 0 0 21 12"/></svg>
+        </div>
+        <div class="flex flex-col pr-1">
+            <span class="text-[9px] font-mono uppercase text-cyan-900 font-bold">Database</span>
+            <span class="text-xs font-extrabold text-slate-800">MySQL & PostgreSQL</span>
+        </div>
+    </div>
+
+    {{-- Right middle: Python & R --}}
+    <div class="floating-card absolute right-[3%] lg:right-[5%] bottom-[36%] z-20 hidden md:flex items-center gap-3">
+        <div class="p-2 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-lg text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19h8M4 17l6-6-6-6"/></svg>
+        </div>
+        <div class="flex flex-col pr-1">
+            <span class="text-[9px] font-mono uppercase text-emerald-900 font-bold">Design</span>
+            <span class="text-xs font-extrabold text-slate-800">Figma & UI/UX</span>
+        </div>
+    </div>
+
+    {{-- Right pill: ETL --}}
+    <div class="floating-pill absolute right-[6%] top-1/2 -translate-y-16 z-20 hidden lg:flex animate-float-slow">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+        <span>Git & GitHub</span>
+    </div>
+
+    {{-- Center: Big Title Box --}}
+    <div class="relative px-8 py-6 sm:px-12 sm:py-8 border-2 border-white/90 bg-white/40 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(100,116,139,0.15)] z-30 my-auto" id="intro-box">
+        {{-- Corner handles --}}
+        <div class="absolute -top-2 -left-2 w-3.5 h-3.5 bg-white border border-primary-400 shadow-sm rounded-sm"></div>
+        <div class="absolute -top-2 -right-2 w-3.5 h-3.5 bg-white border border-primary-400 shadow-sm rounded-sm"></div>
+        <div class="absolute -bottom-2 -left-2 w-3.5 h-3.5 bg-white border border-primary-400 shadow-sm rounded-sm"></div>
+        <div class="absolute -bottom-2 -right-2 w-3.5 h-3.5 bg-white border border-primary-400 shadow-sm rounded-sm"></div>
+
+        <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-slate-900 tracking-tight drop-shadow-[0_4px_12px_rgba(255,255,255,0.8)] whitespace-nowrap pr-4 sm:pr-8">MY PORTFOLIO</h1>
+
+        {{-- Cursor icon --}}
+        <div class="absolute -bottom-5 left-3 sm:-bottom-6 sm:left-6 z-40 pointer-events-none">
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-md scale-110 sm:scale-125">
+                <path d="M4 4V28L10.5 21.5L14.5 30L19 28L15 19.5L24 19L4 4Z" fill="#3A004D" stroke="white" stroke-width="2"/>
+            </svg>
+        </div>
+
+        {{-- Dropdown Role badges --}}
+        <div class="absolute -right-3 sm:-right-8 -bottom-16 sm:-bottom-20 w-36 sm:w-44 bg-white/80 backdrop-blur-2xl rounded-[20px] shadow-[0_15px_35px_rgba(100,116,139,0.18)] border border-white/90 overflow-hidden flex flex-col z-40 text-center">
+            <div class="py-2 sm:py-2.5 px-3 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-primary-50/80 active:scale-[0.98] transition-all cursor-default border-b border-primary-100/60">Full Stack Dev</div>
+            <div class="py-2 sm:py-2.5 px-3 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-primary-50/80 active:scale-[0.98] transition-all cursor-default border-b border-primary-100/60">UI/UX Designer</div>
+            <div class="py-2 sm:py-2.5 px-3 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-primary-50/80 active:scale-[0.98] transition-all cursor-default border-b border-primary-100/60">Laravel Expert</div>
+            <div class="py-2 sm:py-2.5 px-3 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-primary-50/80 active:scale-[0.98] transition-all cursor-default">Open to Internship</div>
+        </div>
+    </div>
+
+    {{-- Bottom Presented by badge --}}
+    <div class="z-30">
+        <div class="bg-white/85 px-6 py-2 rounded-full shadow-[0_10px_25px_rgba(100,116,139,0.12)] border border-white transition-transform hover:scale-105 cursor-default backdrop-blur-xl">
+            <p class="text-slate-800 text-xs sm:text-sm tracking-wide whitespace-nowrap font-semibold">Presented by <span class="font-black text-primary-900">Febriansyah Putra</span></p>
+        </div>
+    </div>
+</section>
+
+{{-- ==================== HERO SECTION ==================== --}}
+<section id="hero" class="relative flex min-h-screen flex-col overflow-hidden z-20 bg-[#EBE6EF]">
+
+    {{-- Top Marquee --}}
+    <div class="absolute top-0 left-0 w-full overflow-hidden z-20 py-4">
+        <div class="relative overflow-hidden border-y border-[#3A004D]/10 py-3 bg-transparent"
+             style="-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)"
+             aria-label="Skills and areas of focus">
+            <div class="marquee-track flex w-max items-center gap-8">
+                @php
+                $marqueeItems = ['PHP & Laravel','JavaScript','React.js','Flutter','MySQL','Git & GitHub','Figma','Tailwind CSS','Java','SQL','REST API','Fotografi','Videografi','Desain Grafis','OOP','SDLC','VS Code'];
+                $marqueeAll   = array_merge($marqueeItems, $marqueeItems);
+                @endphp
+                @foreach($marqueeAll as $item)
+                <span class="flex items-center gap-8 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.12em] text-[#3A004D] font-semibold">
+                    {{ $item }}<span class="text-[#8B4F67]" aria-hidden="true">·</span>
+                </span>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    {{-- Main 2-Column Content --}}
+    <div class="container relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 pt-36 pb-24 lg:grid-cols-12 w-full my-auto">
+
+        {{-- Left: Text Content --}}
+        <div class="relative flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left justify-center">
+            {{-- Blurred backdrop behind text (mobile + desktop) --}}
+            <div class="absolute -inset-6 sm:-inset-10 rounded-[4rem] pointer-events-none -z-10 backdrop-blur-[6px]"
+                 style="background:radial-gradient(ellipse at center,rgba(235,230,239,0.92) 20%,rgba(235,230,239,0.65) 60%,rgba(235,230,239,0) 100%);-webkit-mask-image:radial-gradient(ellipse at center,black 45%,transparent 100%);mask-image:radial-gradient(ellipse at center,black 45%,transparent 100%)"></div>
+
+            <div class="flex flex-col items-center lg:items-start space-y-6 w-full animate-fade-in-up" style="animation-delay:0.1s; opacity:0; animation-fill-mode:forwards;">
+                {{-- Available badge --}}
+                <div class="inline-flex items-center rounded-full border border-[#3A004D]/20 px-4 py-1.5 text-xs font-semibold shadow-[0_4px_20px_rgba(255,255,255,0.9)] bg-[#3A004D] text-white">
+                    Available for Internships & Projects
+                </div>
+
+                {{-- Name heading --}}
+                <h2 class="font-display italic font-medium text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.1] text-[#3A004D]"
+                    style="text-shadow:0 0 20px rgba(255,255,255,0.95),0 0 35px rgba(255,255,255,0.8),0 2px 10px rgba(255,255,255,1)">
+                    Hi, I'm Febriansyah<br>Putra
+                </h2>
+
+                {{-- Role tags --}}
+                <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    <span class="text-xs px-3.5 py-1.5 bg-[#3A004D] text-white font-medium rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.8)]">Full Stack Developer</span>
+                    <span class="text-xs px-3.5 py-1.5 bg-[#3A004D] text-white font-medium rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.8)]">UI/UX Designer</span>
+                    <span class="text-xs px-3.5 py-1.5 bg-[#3A004D] text-white font-medium rounded-full shadow-[0_2px_12px_rgba(255,255,255,0.8)]">Laravel Expert</span>
+                </div>
+
+                {{-- Description --}}
+                <p class="max-w-2xl text-base text-[#3A004D] md:text-lg font-medium leading-relaxed"
+                   style="text-shadow:0 0 14px rgba(255,255,255,0.95),0 0 28px rgba(255,255,255,0.7)">
+                    {{ $hero_description ?? 'Mahasiswa Politeknik Negeri Padang yang bersemangat membangun aplikasi web & mobile modern dengan Laravel, React, dan Flutter.' }}
+                </p>
+
+                {{-- CTA Buttons --}}
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4 lg:justify-start">
+                    <a href="#projects" class="inline-flex h-12 items-center justify-center rounded-full bg-[#3A004D] px-6 font-semibold text-white transition-all hover:bg-[#8B4F67] shadow-[0_4px_20px_rgba(255,255,255,0.85)] hover:shadow-xl">
+                        View Work
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                    </a>
+                    <a href="{{ asset('cv.pdf') }}" target="_blank" class="inline-flex h-12 items-center justify-center rounded-full border-2 border-[#3A004D] bg-white px-6 font-semibold text-[#3A004D] transition-all hover:bg-gray-100 shadow-[0_4px_20px_rgba(255,255,255,0.85)] hover:shadow-xl">
+                        Download CV
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4 text-[#3A004D]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15V3M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4m4-5 5 5 5-5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{-- Right: Photo --}}
+        <div class="relative lg:col-span-5 w-full flex items-center justify-center animate-fade-in" style="animation-delay:0.5s; opacity:0; animation-fill-mode:forwards;">
+            <div class="relative w-full max-w-md aspect-[4/3] rounded-2xl p-1 bg-gradient-to-tr from-[#3A004D]/30 via-[#8B4F67]/30 to-[#9E4ABB]/30 shadow-xl backdrop-blur-md border border-[#3A004D]/10">
+                <div class="w-full h-full rounded-xl overflow-hidden bg-white relative">
+                    <img src="{{ asset('images/profile.jpg') }}"
+                         alt="Febriansyah Putra"
+                         class="object-cover object-center w-full h-full"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-surface-200\'><span class=\'text-6xl font-display font-black text-primary-300\'>FP</span></div>'">
+                </div>
+                <div class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#9E4ABB] to-[#8B4F67] opacity-15 blur-xl -z-10"></div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Bottom Marquee --}}
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden z-20 py-4">
+        <div class="relative overflow-hidden border-y border-[#3A004D]/10 py-3 bg-transparent"
+             style="-webkit-mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)"
+             aria-label="Skills and areas of focus">
+            <div class="marquee-track-reverse flex w-max items-center gap-8">
+                @foreach($marqueeAll as $item)
+                <span class="flex items-center gap-8 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.12em] text-[#3A004D] font-semibold">
+                    {{ $item }}<span class="text-[#8B4F67]" aria-hidden="true">·</span>
+                </span>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="projects" class="py-24 lg:py-32 relative overflow-hidden bg-[#f6f2fb]">
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 pointer-events-none opacity-[0.10] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+    {{-- Orbs --}}
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-300/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-mauve-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="projectFilter()">
+
+        {{-- Header --}}
+        <div class="text-center mb-12 reveal">
+            <span class="section-label mb-3">
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+                Portfolio
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+            </span>
+            <h2 class="section-title mt-2">Featured <span class="gradient-text">Projects</span></h2>
+            <p class="section-subtitle mx-auto mt-3">Proyek-proyek yang pernah saya kerjakan</p>
+        </div>
+
+        {{-- Filter Pills --}}
+        <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+            @php $categories = ['all'=>'All','web-app'=>'Web App','ui-ux'=>'UI/UX','mobile'=>'Mobile']; @endphp
+            @foreach($categories as $value => $label)
+            <button
+                @click="setFilter('{{ $value }}')"
+                :class="activeFilter === '{{ $value }}' ? 'filter-btn active' : 'filter-btn'"
+                class="filter-btn"
+            >{{ $label }}</button>
+            @endforeach
+        </div>
+
+        {{-- Projects Grid --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+            @php
+            $projects = $projects ?? [
+                ['title'=>'QM Billiard & Cafe','description'=>'Peran : FrontEnd Developer. Membangun antarmuka SPA modern menggunakan React dan Tailwind CSS.','full_description'=>'Aplikasi manajemen QM Billiard & Cafe yang dibangun dengan React sebagai frontend SPA dan dipadukan dengan Tailwind CSS untuk tampilan yang responsif dan modern. Mencakup manajemen pemesanan meja biliar, menu cafe, laporan transaksi, dan dashboard admin.','tags'=>['React','Tailwind CSS','PHP'],'category'=>'web-app','year'=>'2024','link'=>'https://github.com/M-IrsyadGumanof/QM-Cafe-Billiard','image'=>'images/projects/qm-billiard-cafe.jpeg','stats'=>[['v'=>'2 Bulan','l'=>'Dev Time'],['v'=>'SPA','l'=>'Architecture'],['v'=>'10+','l'=>'Features'],['v'=>'Mobile','l'=>'Responsive']],'overview'=>'Platform manajemen terintegrasi untuk QM Billiard & Cafe.','recruiter'=>'Proyek ini membuktikan kemampuan saya dalam membangun SPA dengan React, integrasi API, dan penerapan UI/UX responsif dalam setting bisnis nyata.','steps'=>['Analisis kebutuhan bisnis QM','Desain wireframe di Figma','Setup React + Tailwind CSS','Implementasi fitur management','Testing & deployment']],
+                ['title'=>'SISIPOL (On Going)','description'=>'Peran : Full Stack Developer. Sistem Informasi Forsipol berbasis Laravel & MySQL.','full_description'=>'Sistem Informasi manajemen organisasi Forum Studi Islam Politeknik (FORSIPOL) yang menggantikan pencatatan manual. Dibangun full-stack dengan Laravel, Blade Template, dan MySQL.','tags'=>['Laravel','MySQL','Blade'],'category'=>'web-app','year'=>'2025','link'=>'https://github.com/putrafebriansyah40-beep/SistemInformasiForsipol','image'=>'images/projects/sisipol.png','stats'=>[['v'=>'Full Stack','l'=>'Role'],['v'=>'3 Modul','l'=>'Fitur Utama'],['v'=>'Laravel','l'=>'Framework'],['v'=>'MySQL','l'=>'Database']],'overview'=>'Sistem informasi untuk manajemen anggota, keuangan, dan administrasi organisasi FORSIPOL PNP.','recruiter'=>'Mendemonstrasikan kemampuan full-stack Laravel: CRUD, autentikasi, manajemen database, dan arsitektur MVC.','steps'=>['Analisis kebutuhan organisasi','Desain ERD database','Setup Laravel & auth','Implementasi modul anggota & keuangan','Testing dan review']],
+                ['title'=>'UI/UX QM Billiard & Cafe','description'=>'Desain antarmuka modern untuk aplikasi QM Billiard dan Cafe menggunakan Figma.','full_description'=>'Desain UI/UX komprehensif untuk aplikasi QM Billiard & Cafe. Meliputi riset pengguna, user flow, wireframe, hingga prototype interaktif di Figma.','tags'=>['Figma','UI/UX','Prototype'],'category'=>'ui-ux','year'=>'2024','link'=>'https://www.figma.com/design/SmKvpP1B6jZHsPqLxLe8mB/QM-Cafe---Billiard-V2','image'=>'images/projects/qm-uiux-figma.jpg','stats'=>[['v'=>'Figma','l'=>'Tool'],['v'=>'20+','l'=>'Screens'],['v'=>'2','l'=>'User Roles'],['v'=>'Mobile+Web','l'=>'Platform']],'overview'=>'Desain sistem visual dan interaksi untuk platform manajemen QM Billiard & Cafe.','recruiter'=>'Menampilkan kemampuan riset UX, design thinking, dan pembuatan prototype yang bisa langsung di-handoff ke developer.','steps'=>['User research & persona','User flow mapping','Wireframe sketching','High-fidelity design di Figma','Prototype & user testing']],
+            ];
+            @endphp
+
+            @foreach($projects as $index => $project)
+            <div
+                class="project-card reveal"
+                style="transition-delay: {{ $index * 120 }}ms;"
+                x-show="activeFilter === 'all' || activeFilter === '{{ $project['category'] }}'"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                x-data="{ expanded: false }"
+            >
+                {{-- Thumbnail --}}
+                <div class="aspect-[16/9] relative overflow-hidden bg-gradient-to-br from-surface-200 to-primary-100">
+                    @if(isset($project['image']))
+                    <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.parentElement.classList.add('flex','items-center','justify-center'); this.style.display='none'; this.parentElement.innerHTML += '<span class=\'text-4xl\'>💻</span>'">
+                    @else
+                    <div class="w-full h-full flex items-center justify-center text-4xl">💻</div>
+                    @endif
+                    {{-- Category + year badge --}}
+                    <div class="absolute top-3 left-3 flex items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-white/80 text-primary-700 backdrop-blur-sm border border-primary-100">{{ ucfirst(str_replace('-',' ',$project['category'])) }}</span>
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-primary-900/80 text-white backdrop-blur-sm">{{ $project['year'] ?? '2024' }}</span>
+                    </div>
+                </div>
+
+                {{-- Body --}}
+                <div class="p-6">
+                    <h3 class="text-base font-bold text-primary-900 mb-1">{{ $project['title'] }}</h3>
+                    <p class="text-xs text-primary-700/60 mb-4 line-clamp-2">{{ $project['description'] }}</p>
+
+                    {{-- Tech tags --}}
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        @foreach($project['tags'] as $tag)
+                        <span class="tag-pill">{{ $tag }}</span>
+                        @endforeach
+                    </div>
+
+                    {{-- Mini stats --}}
+                    @if(isset($project['stats']))
+                    <div class="grid grid-cols-4 gap-2 mb-4 py-3 border-t border-primary-100/50">
+                        @foreach($project['stats'] as $stat)
+                        <div class="text-center">
+                            <p class="text-xs font-bold text-primary-700">{{ $stat['v'] }}</p>
+                            <p class="text-[9px] text-primary-500/60 leading-tight">{{ $stat['l'] }}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                    @endif
+
+                    {{-- Expand toggle --}}
+                    <button @click="expanded = !expanded" class="flex items-center gap-2 text-xs font-semibold text-primary-600 hover:text-primary-800 transition-colors mt-2 w-full justify-between py-2">
+                        <span x-text="expanded ? 'Tutup Detail' : 'Lihat Detail'"></span>
+                        <svg class="w-4 h-4 transition-transform duration-300" :class="expanded ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+
+                    {{-- Expanded detail --}}
+                    <div x-show="expanded" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="border-t border-primary-100/50 pt-4 mt-2 space-y-4">
+
+                        {{-- Overview --}}
+                        @if(isset($project['overview']))
+                        <div>
+                            <p class="text-[10px] font-bold text-mauve-500 uppercase tracking-widest mb-1">Project Overview</p>
+                            <p class="text-xs text-primary-700/80 leading-relaxed">{{ $project['full_description'] ?? $project['overview'] }}</p>
+                        </div>
+                        @endif
+
+                        {{-- Recruiter perspective --}}
+                        @if(isset($project['recruiter']))
+                        <div class="bg-primary-50/80 rounded-xl p-3 border border-primary-100/60">
+                            <p class="text-[10px] font-bold text-primary-600 uppercase tracking-widest mb-1.5">🎯 Recruiter Perspective</p>
+                            <p class="text-xs text-primary-700 leading-relaxed">{{ $project['recruiter'] }}</p>
+                        </div>
+                        @endif
+
+                        {{-- Workflow steps --}}
+                        @if(isset($project['steps']))
+                        <div>
+                            <p class="text-[10px] font-bold text-mauve-500 uppercase tracking-widest mb-2">Workflow</p>
+                            <ol class="space-y-1.5">
+                                @foreach($project['steps'] as $si => $step)
+                                <li class="flex items-start gap-2.5">
+                                    <span class="w-4 h-4 rounded-full bg-primary-900 text-white text-[9px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{{ $si + 1 }}</span>
+                                    <span class="text-xs text-primary-700/80">{{ $step }}</span>
+                                </li>
+                                @endforeach
+                            </ol>
+                        </div>
+                        @endif
+
+                        {{-- GitHub link --}}
+                        <a href="{{ $project['link'] }}" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-white bg-primary-900 hover:bg-primary-800 px-4 py-2 rounded-xl transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+    </div>
+
+    <script>
+    function projectFilter() {
+        return { activeFilter: 'all', setFilter(f) { this.activeFilter = f; } };
+    }
+    </script>
+</section>
+
+<section id="skills" class="py-24 lg:py-32 relative overflow-hidden bg-[#EBE6EF]">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300/60 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300/60 to-transparent"></div>
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 pointer-events-none opacity-[0.07] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+    {{-- Orbs --}}
+    <div class="absolute top-1/4 right-0 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-mauve-200/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Header --}}
+        <div class="text-center mb-16 reveal">
+            <span class="section-label mb-3">
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+                Tech Stack
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+            </span>
+            <h2 class="section-title mt-2">Keahlian <span class="gradient-text">Saya</span></h2>
+            <p class="section-subtitle mx-auto mt-3">Teknologi dan alat yang saya gunakan setiap hari</p>
+        </div>
+
+        {{-- Categories grid --}}
+        @php
+        $categories = [
+            [
+                'label'  => 'Programming',
+                'icon'   => '🧑‍💻',
+                'color'  => 'from-violet-500/10 to-purple-500/10 border-violet-200/50',
+                'dot'    => 'bg-violet-500',
+                'skills' => [
+                    ['name'=>'PHP',       'emoji'=>'🐘','color'=>'#777BB4'],
+                    ['name'=>'JavaScript','emoji'=>'🟨','color'=>'#F7DF1E'],
+                    ['name'=>'Java',      'emoji'=>'☕','color'=>'#ED8B00'],
+                    ['name'=>'Python',    'emoji'=>'🐍','color'=>'#3776AB'],
+                    ['name'=>'SQL',       'emoji'=>'🗄️','color'=>'#4479A1'],
+                ]
+            ],
+            [
+                'label'  => 'Framework & Library',
+                'icon'   => '⚙️',
+                'color'  => 'from-blue-500/10 to-indigo-500/10 border-blue-200/50',
+                'dot'    => 'bg-blue-500',
+                'skills' => [
+                    ['name'=>'Laravel',   'emoji'=>'🔴','color'=>'#FF2D20'],
+                    ['name'=>'React.js',  'emoji'=>'⚛️','color'=>'#61DAFB'],
+                    ['name'=>'Flutter',   'emoji'=>'💙','color'=>'#02569B'],
+                    ['name'=>'Tailwind',  'emoji'=>'🎨','color'=>'#06B6D4'],
+                ]
+            ],
+            [
+                'label'  => 'Database & Tools',
+                'icon'   => '🗃️',
+                'color'  => 'from-emerald-500/10 to-teal-500/10 border-emerald-200/50',
+                'dot'    => 'bg-emerald-500',
+                'skills' => [
+                    ['name'=>'MySQL',     'emoji'=>'🗃️','color'=>'#4479A1'],
+                    ['name'=>'Git',       'emoji'=>'🌿','color'=>'#F05032'],
+                    ['name'=>'GitHub',    'emoji'=>'🐙','color'=>'#181717'],
+                    ['name'=>'VS Code',   'emoji'=>'💻','color'=>'#007ACC'],
+                ]
+            ],
+            [
+                'label'  => 'Design & Creative',
+                'icon'   => '🎨',
+                'color'  => 'from-pink-500/10 to-rose-500/10 border-pink-200/50',
+                'dot'    => 'bg-pink-500',
+                'skills' => [
+                    ['name'=>'Figma',     'emoji'=>'🎭','color'=>'#F24E1E'],
+                    ['name'=>'Fotografi', 'emoji'=>'📸','color'=>'#6D28D9'],
+                    ['name'=>'Videografi','emoji'=>'🎬','color'=>'#DC2626'],
+                    ['name'=>'Desain',    'emoji'=>'✏️','color'=>'#7C3AED'],
+                ]
+            ],
+        ];
+        @endphp
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            @foreach($categories as $i => $cat)
+            <div class="glass-card rounded-2xl p-6 reveal" style="transition-delay: {{ $i * 100 }}ms;">
+                <div class="flex items-center gap-2.5 mb-5">
+                    <span class="w-2.5 h-2.5 rounded-full {{ $cat['dot'] }}"></span>
+                    <p class="text-xs font-bold text-primary-900 uppercase tracking-widest">{{ $cat['label'] }}</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    @foreach($cat['skills'] as $skill)
+                    <div class="skill-icon-item">
+                        <span class="text-2xl">{{ $skill['emoji'] }}</span>
+                        <span class="text-[10px] font-semibold text-primary-700/70 text-center">{{ $skill['name'] }}</span>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        {{-- Marquee rows --}}
+        <div class="reveal space-y-4">
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    @foreach(['PHP','Laravel','React.js','MySQL','JavaScript','Flutter','Figma','Git','Java','Python','Tailwind CSS','SQL','VS Code','GitHub'] as $s)
+                    <span class="inline-flex items-center gap-2 mx-4 px-4 py-2 rounded-full bg-white/60 border border-primary-200/50 text-sm font-semibold text-primary-800 whitespace-nowrap">
+                        {{ $s }}
+                    </span>
+                    @endforeach
+                    @foreach(['PHP','Laravel','React.js','MySQL','JavaScript','Flutter','Figma','Git','Java','Python','Tailwind CSS','SQL','VS Code','GitHub'] as $s)
+                    <span class="inline-flex items-center gap-2 mx-4 px-4 py-2 rounded-full bg-white/60 border border-primary-200/50 text-sm font-semibold text-primary-800 whitespace-nowrap">
+                        {{ $s }}
+                    </span>
+                    @endforeach
+                </div>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee-track-reverse">
+                    @foreach(['OOP','SDLC','REST API','Fotografi','Videografi','Desain Grafis','Teamwork','Problem Solving','Adaptabilitas','Komunikasi','Figma','Wireframing'] as $s)
+                    <span class="inline-flex items-center gap-2 mx-4 px-4 py-2 rounded-full bg-primary-100/60 border border-primary-200/50 text-sm font-medium text-primary-700 whitespace-nowrap">
+                        {{ $s }}
+                    </span>
+                    @endforeach
+                    @foreach(['OOP','SDLC','REST API','Fotografi','Videografi','Desain Grafis','Teamwork','Problem Solving','Adaptabilitas','Komunikasi','Figma','Wireframing'] as $s)
+                    <span class="inline-flex items-center gap-2 mx-4 px-4 py-2 rounded-full bg-primary-100/60 border border-primary-200/50 text-sm font-medium text-primary-700 whitespace-nowrap">
+                        {{ $s }}
+                    </span>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="tour" class="py-24 lg:py-32 relative overflow-hidden bg-[#EBE6EF]">
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 pointer-events-none opacity-[0.07] bg-[radial-gradient(#3A004D_1px,transparent_1px)] [background-size:28px_28px]"></div>
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200/25 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-mauve-200/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {{-- Header --}}
+        <div class="text-center mb-16 reveal">
+            <span class="section-label mb-3">
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+                Interactive
+                <span class="w-4 h-px bg-mauve-500 block"></span>
+            </span>
+            <h2 class="section-title mt-2">3D <span class="gradient-text">Skills Tour</span></h2>
+            <p class="section-subtitle mx-auto mt-3">Hover untuk menjeda rotasi, klik ikon untuk melihat detail skill</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            {{-- CSS 3D Globe --}}
+            <div class="flex-shrink-0 reveal-left">
+                <div class="globe-scene w-72 h-72 md:w-96 md:h-96 relative select-none" id="globe-scene">
+                    {{-- Glow ring --}}
+                    <div class="absolute inset-0 rounded-full border-2 border-primary-200/40 shadow-glow"></div>
+                    <div class="absolute inset-4 rounded-full border border-primary-100/30"></div>
+                    <div class="absolute inset-8 rounded-full border border-primary-50/30"></div>
+
+                    {{-- Center dot --}}
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-400 to-primary-800 flex items-center justify-center shadow-purple">
+                            <span class="text-white font-display font-black text-xl">FP</span>
+                        </div>
+                    </div>
+
+                    {{-- Orbit 1 (horizontal) --}}
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full h-full rounded-full border border-primary-200/40 animate-spin-slow" style="transform: rotateX(70deg);">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">PHP</div>
+                            </div>
+                            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">Laravel</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Orbit 2 (tilted) --}}
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full h-full rounded-full border border-surface-300/60 animate-spin-slow" style="transform: rotateX(70deg) rotateZ(60deg); animation-duration: 16s; animation-direction: reverse;">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">React</div>
+                            </div>
+                            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">MySQL</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Orbit 3 --}}
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-full h-full rounded-full border border-primary-100/50 animate-spin-slow" style="transform: rotateX(70deg) rotateZ(120deg); animation-duration: 22s;">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">Figma</div>
+                            </div>
+                            <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                                <div class="glass-card px-2 py-1 rounded-lg text-[10px] font-bold text-primary-800 border-primary-200/60 whitespace-nowrap">Flutter</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Journey text --}}
+            <div class="flex-1 reveal-right">
+                <h3 class="text-2xl md:text-3xl font-display font-bold text-primary-900 mb-6">
+                    Perjalanan Belajar <span class="gradient-text">Saya</span>
+                </h3>
+
+                {{-- Timeline journey --}}
+                <div class="space-y-6">
+                    @php
+                    $journey = [
+                        ['year'=>'2021','title'=>'Awal Coding','desc'=>'Mulai belajar pemrograman dari scratch dengan Python dan algoritma dasar di SMA.','icon'=>'🌱'],
+                        ['year'=>'2023','title'=>'Web Development','desc'=>'Mendalami HTML, CSS, JavaScript, kemudian merambah ke PHP dan framework Laravel.','icon'=>'🌐'],
+                        ['year'=>'2024','title'=>'Kuliah di PNP','desc'=>'Diterima di D4 Teknologi Rekayasa Perangkat Lunak, Politeknik Negeri Padang. IPK 3.27.','icon'=>'🎓'],
+                        ['year'=>'Now','title'=>'Full Stack & Design','desc'=>'Fokus pada Laravel, React, Flutter, dan Figma. Aktif di berbagai organisasi kampus.','icon'=>'🚀'],
+                    ];
+                    @endphp
+                    @foreach($journey as $j)
+                    <div class="flex items-start gap-4">
+                        <div class="flex flex-col items-center flex-shrink-0">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-100 to-surface-200 flex items-center justify-center text-base shadow-card">{{ $j['icon'] }}</div>
+                            @if(!$loop->last)
+                            <div class="w-0.5 h-8 bg-gradient-to-b from-primary-200 to-transparent mt-1"></div>
+                            @endif
+                        </div>
+                        <div class="pb-2">
+                            <div class="flex items-center gap-3 mb-1">
+                                <span class="text-xs font-bold text-primary-500 bg-primary-50 px-2 py-0.5 rounded-full">{{ $j['year'] }}</span>
+                                <h4 class="text-sm font-bold text-primary-900">{{ $j['title'] }}</h4>
+                            </div>
+                            <p class="text-sm text-neutral-500 leading-relaxed">{{ $j['desc'] }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -5,6 +5,7 @@ import {
   SiPython, SiGoogledrive, SiGooglegemini 
 } from 'react-icons/si';
 import { FaNetworkWired, FaFileWord, FaFileExcel } from 'react-icons/fa';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CanvaIcon = ({ className }: { className?: string }) => (
   <svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -27,10 +28,10 @@ const skillsRow1 = [
   { name: 'JavaScript', icon: <SiJavascript className="text-[#F7DF1E] w-5 h-5" /> },
   { name: 'TypeScript', icon: <SiTypescript className="text-[#3178C6] w-5 h-5" /> },
   { name: 'React.js', icon: <SiReact className="text-[#61DAFB] w-5 h-5" /> },
-  { name: 'Next.js', icon: <SiNextdotjs className="text-black w-5 h-5" /> },
+  { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white w-5 h-5" /> },
   { name: 'Flutter', icon: <SiFlutter className="text-[#02569B] w-5 h-5" /> },
   { name: 'MySQL', icon: <SiMysql className="text-[#4479A1] w-6 h-6" /> },
-  { name: 'REST API', icon: <FaNetworkWired className="text-emerald-600 w-5 h-5" /> },
+  { name: 'REST API', icon: <FaNetworkWired className="text-emerald-600 dark:text-emerald-400 w-5 h-5" /> },
 ];
 
 const skillsRow2 = [
@@ -39,21 +40,25 @@ const skillsRow2 = [
   { name: 'Canva', icon: <CanvaIcon className="text-[#00C4CC] w-5 h-5" /> },
   { name: 'VS Code', icon: <VscodeIcon className="text-[#007ACC] w-5 h-5" /> },
   { name: 'Antigravity', icon: <SiGooglegemini className="text-[#8E75B2] w-5 h-5" /> },
-  { name: 'Git & GitHub', icon: <SiGithub className="text-[#181717] w-5 h-5" /> },
+  { name: 'Git & GitHub', icon: <SiGithub className="text-[#181717] dark:text-white w-5 h-5" /> },
   { name: 'MS Word', icon: <FaFileWord className="text-[#2B579A] w-5 h-5" /> },
   { name: 'MS Excel', icon: <FaFileExcel className="text-[#217346] w-5 h-5" /> },
   { name: 'Google Drive', icon: <SiGoogledrive className="text-[#1FA463] w-5 h-5" /> },
 ];
 
 export default function TechSkills() {
+  const { language } = useLanguage();
+
   return (
-    <section className="py-24 bg-[#EBE6EF] relative overflow-hidden z-20">
+    <section className="py-24 bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out relative overflow-hidden z-20">
       <div className="text-center mb-16 relative z-10 px-4">
-        <h2 className="text-4xl md:text-5xl font-black text-[#3A004D]">
+        <h2 className="text-4xl md:text-5xl font-black text-[#3A004D] dark:text-white">
           Tech Skills<span className="text-pink-500">.</span>
         </h2>
-        <p className="mt-4 text-slate-500 font-medium max-w-lg mx-auto">
-          Tools, languages, frameworks, and ecosystems that I use to build robust web and mobile applications.
+        <p className="mt-4 text-slate-500 dark:text-slate-400 font-medium max-w-lg mx-auto">
+          {language === 'en' 
+            ? 'Tools, languages, frameworks, and ecosystems that I use to build robust web and mobile applications.'
+            : 'Perkakas, bahasa, kerangka kerja, dan ekosistem yang saya gunakan untuk membangun aplikasi web dan seluler yang tangguh.'}
         </p>
       </div>
 
@@ -63,11 +68,11 @@ export default function TechSkills() {
         {/* Row 1 */}
         <div className="flex w-max animate-marquee-left gap-4 hover:[animation-play-state:paused] py-2">
           {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, i) => (
-            <div key={i} className="flex items-center gap-3 px-6 py-4 bg-white/70 backdrop-blur-md rounded-full shadow-sm border border-white/60 flex-shrink-0 transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
-              <div className="bg-slate-50 p-1.5 rounded-full border border-slate-100 shadow-inner">
+            <div key={i} className="flex items-center gap-3 px-6 py-4 bg-white/70 dark:bg-slate-900/50 backdrop-blur-md rounded-full shadow-sm border border-white/60 dark:border-white/10 flex-shrink-0 transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
+              <div className="bg-slate-50 dark:bg-white/5 p-1.5 rounded-full border border-slate-100 dark:border-white/10 shadow-inner">
                 {skill.icon}
               </div>
-              <span className="font-bold text-slate-700 text-sm">{skill.name}</span>
+              <span className="font-bold text-slate-700 dark:text-slate-200 text-sm">{skill.name}</span>
             </div>
           ))}
         </div>
@@ -75,11 +80,11 @@ export default function TechSkills() {
         {/* Row 2 */}
         <div className="flex w-max animate-marquee-right gap-4 hover:[animation-play-state:paused] py-2">
           {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, i) => (
-            <div key={i} className="flex items-center gap-3 px-6 py-4 bg-white/70 backdrop-blur-md rounded-full shadow-sm border border-white/60 flex-shrink-0 transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
-              <div className="bg-slate-50 p-1.5 rounded-full border border-slate-100 shadow-inner">
+            <div key={i} className="flex items-center gap-3 px-6 py-4 bg-white/70 dark:bg-slate-900/50 backdrop-blur-md rounded-full shadow-sm border border-white/60 dark:border-white/10 flex-shrink-0 transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
+              <div className="bg-slate-50 dark:bg-white/5 p-1.5 rounded-full border border-slate-100 dark:border-white/10 shadow-inner">
                 {skill.icon}
               </div>
-              <span className="font-bold text-slate-700 text-sm">{skill.name}</span>
+              <span className="font-bold text-slate-700 dark:text-slate-200 text-sm">{skill.name}</span>
             </div>
           ))}
         </div>

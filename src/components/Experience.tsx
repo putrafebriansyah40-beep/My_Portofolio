@@ -85,7 +85,7 @@ export default function Experience() {
   }, [autoTour]);
 
   return (
-    <section id="experience" className="relative overflow-hidden bg-[#EBE6EF] dark:bg-[#0f0a18] flex flex-col min-h-screen transition-colors duration-700 ease-in-out">
+    <section id="experience" className="relative overflow-hidden bg-[#EBE6EF] dark:bg-[#0f0a18] flex flex-col min-h-screen transition-colors duration-300 ease-in-out">
       {/* Background Dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-[8%] left-[15%] w-3 h-3 rounded-full bg-purple-500/50"></div>
@@ -130,7 +130,7 @@ export default function Experience() {
             <div
               key={i}
               onClick={() => goTo(i)}
-              className="absolute transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] cursor-pointer select-none"
+              className="absolute transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] cursor-pointer select-none"
               style={{ transform, zIndex, opacity, pointerEvents: opacity > 0 ? 'auto' : 'none' }}
             >
               <div className={`rounded-[28px] overflow-hidden shadow-xl border border-white/60 dark:border-white/10 bg-white dark:bg-slate-900 ${i === active ? 'ring-2 ring-white/50 dark:ring-purple-500/50' : ''}`} style={{ width: '100%', maxWidth: '360px', minWidth: '300px' }}>
@@ -163,7 +163,7 @@ export default function Experience() {
       <div className="flex flex-col items-center pb-16 z-10">
         <div className="flex items-center gap-2.5 mt-4 mb-5">
           {activities.map((_, i) => (
-            <button key={i} onClick={() => goTo(i)} className={`rounded-full transition-all duration-700 ease-in-out ${active === i ? 'w-8 h-2.5 bg-purple-600 dark:bg-purple-400' : 'w-2.5 h-2.5 bg-purple-300 dark:bg-purple-900/50 hover:bg-purple-400 dark:hover:bg-purple-700'}`}></button>
+            <button key={i} onClick={() => goTo(i)} className={`rounded-full transition-all duration-300 ease-in-out ${active === i ? 'w-8 h-2.5 bg-purple-600 dark:bg-purple-400' : 'w-2.5 h-2.5 bg-purple-300 dark:bg-purple-900/50 hover:bg-purple-400 dark:hover:bg-purple-700'}`}></button>
           ))}
         </div>
 

@@ -50,7 +50,7 @@ export default function TechSkills() {
   const { language } = useLanguage();
 
   return (
-    <section className="py-24 bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out relative overflow-hidden z-20">
+    <section className="py-24 bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-300 ease-in-out relative overflow-hidden z-20">
       <div className="text-center mb-16 relative z-10 px-4">
         <h2 className="text-4xl md:text-5xl font-black text-[#3A004D] dark:text-white">
           Tech Skills<span className="text-pink-500">.</span>

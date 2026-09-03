@@ -24,7 +24,7 @@ export default function Header() {
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 w-full z-50 px-3 sm:px-6 pt-4 transition-all duration-700 ease-in-out ${scrolled ? 'py-2' : 'py-4'}`}
+        className={`fixed top-0 w-full z-50 px-3 sm:px-6 pt-4 transition-all duration-300 ease-in-out ${scrolled ? 'py-2' : 'py-4'}`}
       >
         <div className="relative w-full max-w-7xl mx-auto rounded-2xl sm:rounded-full bg-white/40 dark:bg-black/40 backdrop-blur-xl border border-purple-900/10 dark:border-white/20 p-2 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.5)] flex items-center justify-between gap-3 overflow-hidden">
           <div className="absolute -top-10 left-1/4 w-1/2 h-20 bg-purple-500/20 blur-3xl pointer-events-none rounded-full"></div>
@@ -66,7 +66,7 @@ export default function Header() {
               </span>
               <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-300/90 font-medium">Available</span>
             </div>
-            <a href="#contact" className="relative group flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-purple-600/10 via-purple-500/10 to-purple-600/10 dark:from-purple-600/30 dark:via-white/10 dark:to-purple-600/20 border border-purple-900/20 dark:border-white/30 hover:border-purple-400/60 transition-all duration-700 ease-in-out shadow-sm hover:shadow-purple-500/20">
+            <a href="#contact" className="relative group flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-purple-600/10 via-purple-500/10 to-purple-600/10 dark:from-purple-600/30 dark:via-white/10 dark:to-purple-600/20 border border-purple-900/20 dark:border-white/30 hover:border-purple-400/60 transition-all duration-300 ease-in-out shadow-sm hover:shadow-purple-500/20">
               <span className="font-extrabold text-sm sm:text-base tracking-widest text-[#3A004D] dark:text-white font-sans group-hover:scale-105 transition-transform flex items-center gap-0.5">FEBRI<span className="text-purple-600 dark:text-purple-400 animate-pulse">.</span></span>
               <ArrowUpRight size={14} className="text-[#3A004D]/60 dark:text-white/60 group-hover:text-purple-600 dark:group-hover:text-purple-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>

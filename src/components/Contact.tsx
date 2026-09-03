@@ -38,7 +38,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-[#f6f2fb] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out">
+    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-[#f6f2fb] dark:bg-[#0f0a18] transition-colors duration-300 ease-in-out">
       <div className="absolute inset-0 pointer-events-none opacity-[0.10] dark:opacity-5 bg-[radial-gradient(#3A004D_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]"></div>
       
       <div className="absolute inset-0 pointer-events-none z-0">

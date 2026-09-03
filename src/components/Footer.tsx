@@ -10,7 +10,7 @@ export default function Footer() {
 
   const techs = [
     { name: 'Next.js', icon: <Triangle className="w-3 h-3 fill-current" /> },
-    { name: 'TypeScript', icon: <Terminal className=x"w-3 h-3" /> },
+    { name: 'TypeScript', icon: <Terminal className="w-3 h-3" /> },
     { name: 'Tailwind CSS', icon: <Paintbrush className="w-3 h-3" /> },
     { name: 'Framer Motion', icon: <Zap className="w-3 h-3" /> },
     { name: 'React Bits', icon: <Sparkles className="w-3 h-3" /> },

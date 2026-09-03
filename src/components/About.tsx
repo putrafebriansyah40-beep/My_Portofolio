@@ -162,7 +162,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 lg:py-32 relative bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out">
+    <section id="about" className="py-24 lg:py-32 relative bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-300 ease-in-out">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -171,7 +171,7 @@ export default function About() {
             <span className="w-12 h-px bg-purple-300 dark:bg-purple-800 block"></span>
             <span className="text-xs font-bold uppercase tracking-widest text-purple-800 dark:text-purple-400">{language === 'en' ? 'ABOUT ME' : 'TENTANG SAYA'}</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-[#3A004D] dark:text-white mb-3 tracking-tight transition-colors duration-700 ease-in-out">
+          <h2 className="text-4xl md:text-6xl font-black text-[#3A004D] dark:text-white mb-3 tracking-tight transition-colors duration-300 ease-in-out">
             {language === 'en' ? 'The person behind the code' : 'Sosok di balik kode'}<span className="text-pink-500">.</span>
           </h2>
           <p className="text-lg text-[#3A004D]/60 dark:text-purple-300/60 font-medium">

@@ -120,11 +120,11 @@ export default function WaveBackground() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Base Background Color */}
-      <div className="absolute inset-0 bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out"></div>
+      <div className="absolute inset-0 bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-300 ease-in-out"></div>
       {/* Canvas for Interactive 3D Wave */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-80 mix-blend-multiply dark:mix-blend-screen"></canvas>
       {/* Gradient Overlay agar teks tetap terbaca dengan jelas */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#EBE6EF]/50 dark:from-[#0f0a18]/50 via-transparent to-transparent transition-colors duration-700 ease-in-out"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#EBE6EF]/50 dark:from-[#0f0a18]/50 via-transparent to-transparent transition-colors duration-300 ease-in-out"></div>
     </div>
   );
 }

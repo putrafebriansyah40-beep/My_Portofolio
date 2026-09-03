@@ -40,7 +40,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 lg:py-32 relative bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-700 ease-in-out">
+    <section id="projects" className="py-24 lg:py-32 relative bg-[#EBE6EF] dark:bg-[#0f0a18] transition-colors duration-300 ease-in-out">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
         {/* Section Header */}
@@ -54,7 +54,7 @@ export default function Projects() {
             <span className="w-12 h-px bg-purple-500 block"></span>
             <span className="text-xs font-bold uppercase tracking-widest text-purple-700 dark:text-purple-400">{t('projects.tag')}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#3A004D] dark:text-white transition-colors duration-700 ease-in-out">
+          <h2 className="text-4xl md:text-5xl font-black text-[#3A004D] dark:text-white transition-colors duration-300 ease-in-out">
             {t('projects.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400">{t('projects.titleHighlight')}</span><span className="text-pink-500 dark:text-pink-400">.</span>
           </h2>
           <p className="mt-4 text-slate-500 dark:text-slate-400 font-medium max-w-2xl">
@@ -73,7 +73,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white/60 dark:bg-slate-900/50 backdrop-blur-md border border-white/80 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 ease-in-out flex flex-col"
+              className="group bg-white/60 dark:bg-slate-900/50 backdrop-blur-md border border-white/80 dark:border-white/10 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col"
             >
               {/* Image Container */}
               <div className="relative h-60 w-full overflow-hidden">

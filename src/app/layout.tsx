@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} font-sans antialiased bg-[#EBE6EF] dark:bg-[#0f0a18] text-slate-800 dark:text-slate-200 transition-colors duration-700 ease-in-out`}
+        className={`${poppins.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} font-sans antialiased bg-[#EBE6EF] dark:bg-[#0f0a18] text-slate-800 dark:text-slate-200 transition-colors duration-300 ease-in-out`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LanguageProvider>

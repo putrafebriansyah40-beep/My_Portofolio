@@ -3,7 +3,7 @@ export const dictionaries = {
     nav: {
       about: "Tentang",
       experience: "Pengalaman",
-      projects: "Proyek",
+      projects: "Portofolio",
       skills: "Keahlian",
       contact: "Kontak"
     },
@@ -12,7 +12,7 @@ export const dictionaries = {
       subtitle: "Membangun Pengalaman Digital yang Elegan",
       description: "Berfokus pada pengembangan web dan mobile modern dengan performa tinggi dan desain intuitif.",
       downloadCv: "Unduh CV",
-      exploreWork: "Jelajahi Proyek"
+      exploreWork: "Jelajahi Portofolio"
     },
     about: {
       title: "Tentang",
@@ -64,17 +64,35 @@ export const dictionaries = {
     },
     projects: {
       tag: "Karya Terpilih",
-      title: "Proyek",
+      title: "Portofolio",
       titleHighlight: "Terbaru",
-      viewProject: "Lihat Proyek",
+      viewProject: "Lihat Portofolio",
+      readMore: "Baca Selengkapnya",
+      close: "Tutup",
       items: {
         pbl: {
-          title: "Project Based Learning",
-          desc: "Platform manajemen pembelajaran berbasis proyek untuk memfasilitasi interaksi antara dosen dan mahasiswa."
+          title: "Project Based Learning (QM Cafe & Billiard)",
+          desc: "Platform manajemen pembelajaran berbasis proyek untuk memfasilitasi interaksi antara dosen dan mahasiswa, diimplementasikan pada QM Cafe & Billiard.",
+          fullDetails: [
+            "QM Cafe & Billiard Management System adalah sistem informasi berbasis web yang dikembangkan untuk mengatasi kendala operasional konvensional, seperti pencatatan reservasi manual, miskomunikasi pesanan ke dapur, dan rekapitulasi laporan yang tidak efisien.",
+            "Dibangun menggunakan Laravel, React.js, Inertia.js, dan MySQL, platform ini mengintegrasikan seluruh proses bisnis mulai dari pemesanan dan reservasi meja secara daring, manajemen inventaris, hingga pelaporan otomatis. Sistem ini dirancang untuk mempermudah pekerjaan staf dan admin, sekaligus memberikan pelayanan yang lebih cepat dan akurat bagi pelanggan."
+          ]
         },
         sisipol: {
-          title: "SISIPOL",
-          desc: "Sistem Informasi Pelanggaran Tata Tertib Politeknik Negeri Padang untuk mendata dan mengelola poin pelanggaran mahasiswa."
+          title: "Sistem Informasi Forsipol",
+          desc: "Sistem manajemen organisasi berbasis web untuk pengelolaan anggota, absensi, dan transparansi kas keuangan.",
+          fullDetails: [
+            "Sistem Informasi Forsipol dikembangkan untuk mengatasi kendala administrasi yang selama ini dilakukan secara manual, seperti pencatatan presensi, pendataan anggota, dan pengelolaan kas yang rentan terhadap kesalahan data serta kurangnya transparansi.",
+            "Berbasis web dengan pembagian hak akses terstruktur (Admin, Bendahara, Member), sistem ini mengintegrasikan fitur rekapitulasi data anggota, transparansi keuangan, monitoring pengkaderan, dan absensi acara agar roda organisasi berjalan lebih profesional dan efisien."
+          ]
+        },
+        electrohub: {
+          title: "ElectroHub",
+          desc: "Platform penyedia komponen elektronika terjangkau untuk mempermudah akses mahasiswa teknik dalam pengerjaan proyek dan praktikum.",
+          fullDetails: [
+            "Tingginya aktivitas praktikum, penelitian, dan proyek teknologi di perguruan tinggi mendorong kebutuhan yang besar terhadap komponen elektronika. Namun, mahasiswa sering kesulitan mendapatkan komponen dengan cepat karena stok toko sekitar kampus yang terbatas dan pengiriman online yang memakan waktu serta biaya kirim yang tidak efisien.",
+            "ElectroHub hadir sebagai program wirausaha mahasiswa sekaligus solusi penyedia komponen elektronika lengkap dan terjangkau khusus mahasiswa dengan sistem pemesanan yang mudah diakses. Platform ini dirancang untuk mempercepat akses komponen, mempermudah proses belajar, dan mendukung kelancaran inovasi teknologi tanpa terhambat masalah logistik."
+          ]
         }
       }
     },
@@ -95,7 +113,7 @@ export const dictionaries = {
     nav: {
       about: "About",
       experience: "Experience",
-      projects: "Projects",
+      projects: "Portfolio",
       skills: "Skills",
       contact: "Contact"
     },
@@ -157,16 +175,34 @@ export const dictionaries = {
     projects: {
       tag: "Selected Works",
       title: "Recent",
-      titleHighlight: "Projects",
-      viewProject: "View Project",
+      titleHighlight: "Portfolio",
+      viewProject: "View Portfolio",
+      readMore: "Read More",
+      close: "Close",
       items: {
         pbl: {
-          title: "Project Based Learning",
-          desc: "A project-based learning management platform to facilitate interactions between lecturers and students."
+          title: "Project Based Learning (QM Cafe & Billiard)",
+          desc: "A project-based learning management platform to facilitate interactions between lecturers and students, implemented at QM Cafe & Billiard.",
+          fullDetails: [
+            "QM Cafe & Billiard Management System is a web-based information system developed to overcome conventional operational constraints, such as manual reservation recording, inefficient order communication to the kitchen, and slow report recapitulation.",
+            "Built using Laravel, React.js, Inertia.js, and MySQL, this platform centralizes all business processes—from online ordering and table reservations to inventory management and automated reporting. The system is designed to streamline staff workflows while providing faster, more accurate service for customers."
+          ]
         },
         sisipol: {
-          title: "SISIPOL",
-          desc: "Disciplinary Violation Information System of Padang State Polytechnic to record and manage student violation points."
+          title: "Sistem Informasi Forsipol",
+          desc: "A web-based organization management system for handling member data, attendance, and financial transparency.",
+          fullDetails: [
+            "The Forsipol Information System was developed to address administrative constraints that were previously handled manually, such as attendance tracking, member registration, and fund management, which were prone to data errors and lacked transparency.",
+            "As a web-based platform with structured access rights (Admin, Treasurer, Member), this system integrates features for member data recapitulation, financial transparency, cadre monitoring, and event attendance to ensure the organization runs more professionally and efficiently."
+          ]
+        },
+        electrohub: {
+          title: "ElectroHub",
+          desc: "An affordable electronic component provider platform facilitating engineering students in their projects and practical labs.",
+          fullDetails: [
+            "The high level of practicum, research, and technology project activities in higher education drives a massive need for electronic components. However, students often struggle to obtain components quickly due to limited local store stock and time-consuming online shipping with inefficient delivery costs.",
+            "ElectroHub serves as a student entrepreneurship program and a solution providing comprehensive, affordable electronic components tailored for students. Featuring an easily accessible ordering system, the platform is designed to accelerate component access and support technological innovation without logistical hurdles."
+          ]
         }
       }
     },

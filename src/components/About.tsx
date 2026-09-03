@@ -35,7 +35,7 @@ function StatCard({ card, index }: { card: any, index: number }) {
       
       {/* Spotlight Effect that follows cursor */}
       <div 
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 hidden dark:block"
+        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 block"
         style={{
           opacity: isHovered ? 1 : 0,
           background: `radial-gradient(350px circle at ${mousePosition.x}px ${mousePosition.y}px, ${card.spotlightColor}, transparent 40%)`
@@ -73,7 +73,7 @@ export default function About() {
       subtitle: t('about.cards.gpa.subtitle'),
       desc: t('about.cards.gpa.desc'),
       gradient: "from-cyan-500/20 to-transparent",
-      spotlightColor: "rgba(6, 182, 212, 0.15)"
+      spotlightColor: "rgba(6, 182, 212, 0.35)"
     },
     {
       icon: <Globe size={16} className="text-blue-500 dark:text-blue-400" />,
@@ -81,7 +81,7 @@ export default function About() {
       subtitle: t('about.cards.study.subtitle'),
       desc: t('about.cards.study.desc'),
       gradient: "from-blue-500/20 to-transparent",
-      spotlightColor: "rgba(59, 130, 246, 0.15)"
+      spotlightColor: "rgba(59, 130, 246, 0.35)"
     },
     {
       icon: <Code2 size={16} className="text-purple-500 dark:text-purple-400" />,
@@ -89,7 +89,7 @@ export default function About() {
       subtitle: t('about.cards.focus.subtitle'),
       desc: t('about.cards.focus.desc'),
       gradient: "from-purple-500/20 to-transparent",
-      spotlightColor: "rgba(168, 85, 247, 0.15)"
+      spotlightColor: "rgba(168, 85, 247, 0.35)"
     },
     {
       icon: <Layers size={16} className="text-pink-500 dark:text-pink-400" />,
@@ -97,7 +97,7 @@ export default function About() {
       subtitle: t('about.cards.projects.subtitle'),
       desc: t('about.cards.projects.desc'),
       gradient: "from-pink-500/20 to-transparent",
-      spotlightColor: "rgba(236, 72, 153, 0.15)"
+      spotlightColor: "rgba(236, 72, 153, 0.35)"
     },
     {
       icon: <Cpu size={16} className="text-indigo-500 dark:text-indigo-400" />,
@@ -106,7 +106,7 @@ export default function About() {
       subtitle: t('about.cards.stack.subtitle'),
       desc: t('about.cards.stack.desc'),
       gradient: "from-indigo-500/20 to-transparent",
-      spotlightColor: "rgba(99, 102, 241, 0.15)"
+      spotlightColor: "rgba(99, 102, 241, 0.35)"
     },
     {
       icon: <Smartphone size={16} className="text-teal-500 dark:text-teal-400" />,
@@ -114,7 +114,7 @@ export default function About() {
       subtitle: t('about.cards.mobile.subtitle'),
       desc: t('about.cards.mobile.desc'),
       gradient: "from-teal-500/20 to-transparent",
-      spotlightColor: "rgba(20, 184, 166, 0.15)"
+      spotlightColor: "rgba(20, 184, 166, 0.35)"
     },
     {
       icon: <Users size={16} className="text-orange-500 dark:text-orange-400" />,
@@ -122,7 +122,7 @@ export default function About() {
       subtitle: t('about.cards.org.subtitle'),
       desc: t('about.cards.org.desc'),
       gradient: "from-orange-500/20 to-transparent",
-      spotlightColor: "rgba(249, 115, 22, 0.15)"
+      spotlightColor: "rgba(249, 115, 22, 0.35)"
     },
     {
       icon: <Zap size={16} className="text-rose-500 dark:text-rose-400" />,
@@ -130,7 +130,7 @@ export default function About() {
       subtitle: t('about.cards.learning.subtitle'),
       desc: t('about.cards.learning.desc'),
       gradient: "from-rose-500/20 to-transparent",
-      spotlightColor: "rgba(244, 63, 94, 0.15)"
+      spotlightColor: "rgba(244, 63, 94, 0.35)"
     }
   ];
 

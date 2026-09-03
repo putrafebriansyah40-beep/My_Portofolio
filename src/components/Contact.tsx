@@ -96,7 +96,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/60 dark:border-white/10 rounded-[2rem] p-10 md:p-16 max-w-4xl mx-auto shadow-sm hover:shadow-lg dark:shadow-none transition-all">
+          <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/60 dark:border-white/10 rounded-[2rem] p-6 sm:p-10 md:p-16 max-w-4xl mx-auto shadow-sm hover:shadow-lg dark:shadow-none transition-all">
             <p className="text-xs font-bold text-purple-500 dark:text-purple-400 uppercase tracking-widest mb-4">Let's Collaborate</p>
             <h3 className="text-3xl md:text-5xl font-safira-style font-black text-slate-800 dark:text-white leading-tight mb-6">
               Let's Build Something<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400">Meaningful Together</span>
@@ -106,9 +106,9 @@ export default function Contact() {
                 ? 'Always open to new projects, internship opportunities, or just talking about tech.'
                 : 'Selalu terbuka untuk proyek baru, peluang magang, atau sekadar ngobrol tentang teknologi.'}
             </p>
-            <a href="mailto:putrafebriansyah40@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-bold transition-all shadow-md hover:shadow-xl hover:-translate-y-1">
-              <Mail size={20} />
-              putrafebriansyah40@gmail.com
+            <a href="mailto:putrafebriansyah40@gmail.com" className="inline-flex w-full sm:w-auto justify-center items-center gap-2 sm:gap-3 px-4 sm:px-8 py-3 sm:py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-bold text-sm sm:text-base transition-all shadow-md hover:shadow-xl hover:-translate-y-1">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="truncate">putrafebriansyah40@gmail.com</span>
             </a>
           </div>
         </motion.div>

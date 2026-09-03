@@ -10,7 +10,7 @@ export default function Footer() {
 
   const techs = [
     { name: 'Next.js', icon: <Triangle className="w-3 h-3 fill-current" /> },
-    { name: 'TypeScript', icon: <Terminal className="w-3 h-3" /> },
+    { name: 'TypeScript', icon: <Terminal className=x"w-3 h-3" /> },
     { name: 'Tailwind CSS', icon: <Paintbrush className="w-3 h-3" /> },
     { name: 'Framer Motion', icon: <Zap className="w-3 h-3" /> },
     { name: 'React Bits', icon: <Sparkles className="w-3 h-3" /> },
@@ -23,10 +23,10 @@ export default function Footer() {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
-        
+
         {/* Top Row */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-          
+
           {/* Left: Info */}
           <div className="flex flex-col items-center lg:items-start gap-1.5 text-center lg:text-left">
             <h3 className="font-extrabold text-xl tracking-wide">Febriansyah Putra</h3>
